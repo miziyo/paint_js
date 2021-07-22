@@ -1,10 +1,12 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+const jsMode = document.getElementById("jsMode");
+const jsClear = document.getElementById("jsClear");
 
 canvas.width = 700;
 canvas.height = 700;
 
-ctx.strokestyle = "#000000";
+ctx.strokestyle = `black`;
 ctx.lineWidth = 2.5;
 
 let painting = false;
@@ -27,6 +29,26 @@ function onMouseMove(event) {
 		ctx.lineTo(x, y);
 		ctx.stroke();
 	}
+}
+
+function fillCanvas() {
+	ctx.rect(0, 0, 700, 700);
+	ctx.fillStyle = `black`;
+	ctx.fill();
+}
+
+function clearCanvas() {
+	ctx.rect(0, 0, 700, 700);
+	ctx.fillStyle = `white`;
+	ctx.fill();
+}
+
+if (jsMode) {
+	jsMode.addEventListener("click", fillCanvas);
+}
+
+if (jsClear) {
+	jsClear.addEventListener("click", clearCanvas);
 }
 
 if (canvas) {
