@@ -89,6 +89,7 @@ if (jsOrange) {
 }
 
 if (jsYellow) {
+	jsYellow.addEventListener("click", changeYellow);
 }
 if (jsMode) {
 	jsMode.addEventListener("click", fillCanvas);
