@@ -53,6 +53,18 @@ function changeGreen() {
 	ctxColor = `Green`;
 }
 
+function changeSkyblue() {
+	ctxColor = `skyblue`;
+}
+
+function changeBlue() {
+	ctxColor = `blue`;
+}
+
+function changeViolet() {
+	ctxColor = `violet`;
+}
+
 function fillCanvas() {
 	ctx.rect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle = ctxColor;
@@ -100,6 +112,18 @@ if (jsYellow) {
 
 if (jsGreen) {
 	jsGreen.addEventListener("click", changeGreen);
+}
+
+if (jsSkyblue) {
+	jsSkyblue.addEventListener("click", changeSkyblue);
+}
+
+if (jsBlue) {
+	jsBlue.addEventListener("click", changeBlue);
+}
+
+if (jsViolet) {
+	jsViolet.addEventListener("click", changeViolet);
 }
 
 if (jsMode) {
