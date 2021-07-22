@@ -29,18 +29,6 @@ function startPainting() {
 	painting = true;
 }
 
-function onMouseMove(event) {
-	const x = event.offsetX;
-	const y = event.offsetY;
-	if (!painting) {
-		ctx.beginPath();
-		ctx.moveTo(x, y);
-	} else {
-		ctx.strokeStyle = ctxColor;
-		ctx.lineTo(x, y);
-		ctx.stroke();
-	}
-}
 function changeBlack() {
 	ctxColor = `black`;
 }
@@ -56,8 +44,13 @@ function changeRed() {
 function changeOrange() {
 	ctxColor = `orange`;
 }
+
 function changeYellow() {
 	ctxColor = `Yellow`;
+}
+
+function changeGreen() {
+	ctxColor = `Green`;
 }
 
 function fillCanvas() {
@@ -70,6 +63,19 @@ function clearCanvas() {
 	ctx.rect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle = `white`;
 	ctx.fill();
+}
+
+function onMouseMove(event) {
+	const x = event.offsetX;
+	const y = event.offsetY;
+	if (!painting) {
+		ctx.beginPath();
+		ctx.moveTo(x, y);
+	} else {
+		ctx.strokeStyle = ctxColor;
+		ctx.lineTo(x, y);
+		ctx.stroke();
+	}
 }
 
 if (jsBlack) {
@@ -91,6 +97,11 @@ if (jsOrange) {
 if (jsYellow) {
 	jsYellow.addEventListener("click", changeYellow);
 }
+
+if (jsGreen) {
+	jsGreen.addEventListener("click", changeGreen);
+}
+
 if (jsMode) {
 	jsMode.addEventListener("click", fillCanvas);
 }
