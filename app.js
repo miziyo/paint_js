@@ -11,9 +11,7 @@ const jsGreen = document.getElementById("jsGreen");
 const jsSkyblue = document.getElementById("jsSkyblue");
 const jsBlue = document.getElementById("jsBlue");
 const jsViolet = document.getElementById("jsViolet");
-const jsRange = document.getElementById("jsRange");
 
-var jsRangeValue = jsRange.value;
 var ctxColor = `black`;
 var ctxlineWidth = 2.5;
 
@@ -132,7 +130,6 @@ function onMouseMove(event) {
 		ctx.lineWidth = ctxlineWidth;
 		ctx.lineTo(x, y);
 		ctx.stroke();
-		console.log(jsRangeValue);
 	}
 }
 
