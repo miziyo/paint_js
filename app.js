@@ -11,13 +11,13 @@ const jsGreen = document.getElementById("jsGreen");
 const jsSkyblue = document.getElementById("jsSkyblue");
 const jsBlue = document.getElementById("jsBlue");
 const jsViolet = document.getElementById("jsViolet");
+const controls_range = document.getElementsByClassName("controls_range");
 
 var ctxColor = `black`;
+var ctxlineWidth = 2.5;
 
 canvas.width = 700;
 canvas.height = 700;
-
-ctx.lineWidth = 2.5;
 
 let painting = false;
 
@@ -76,20 +76,6 @@ function clearCanvas() {
 	ctx.fillStyle = `white`;
 	ctx.fill();
 }
-
-function onMouseMove(event) {
-	const x = event.offsetX;
-	const y = event.offsetY;
-	if (!painting) {
-		ctx.beginPath();
-		ctx.moveTo(x, y);
-	} else {
-		ctx.strokeStyle = ctxColor;
-		ctx.lineTo(x, y);
-		ctx.stroke();
-	}
-}
-
 if (jsBlack) {
 	jsBlack.addEventListener("click", changeBlack);
 }
@@ -132,6 +118,21 @@ if (jsMode) {
 
 if (jsClear) {
 	jsClear.addEventListener("click", clearCanvas);
+}
+
+function onMouseMove(event) {
+	const x = event.offsetX;
+	const y = event.offsetY;
+	if (!painting) {
+		ctx.beginPath();
+		ctx.moveTo(x, y);
+	} else {
+		ctx.strokeStyle = ctxColor;
+		ctx.lineWidth = ctxlineWidth;
+		ctx.lineTo(x, y);
+		ctx.stroke();
+		console.log();
+	}
 }
 
 if (canvas) {
