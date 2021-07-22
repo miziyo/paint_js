@@ -60,7 +60,12 @@ body {
 	transform: scale(0.8);
 }
 
-.controls .controls_range {
+div.controls_range {
+	width: 260px;
 	margin-bottom: 30px;
 	margin-top: 20px;
+}
+
+input#jsRange {
+	margin-left: 60px;
 }
